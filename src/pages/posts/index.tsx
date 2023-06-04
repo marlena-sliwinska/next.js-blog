@@ -1,5 +1,12 @@
+import { ArticleList } from 'components/ArticleList';
+import { BlogLayout } from 'layout/BlogLayout';
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <BlogLayout>
+      <ArticleList />
+    </BlogLayout>
+  );
 };
 
 export default Home;
