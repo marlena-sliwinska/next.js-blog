@@ -22,6 +22,6 @@ export const articleList = [
   createFakePost(),
 ];
 export const getStaticProps: GetStaticProps<{ posts: IArticle[] }> = () => {
-  // do some network letancy
+  // todo: do some network letancy
   return { props: { posts: articleList } };
 };

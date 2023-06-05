@@ -6,6 +6,9 @@ const BlogLayout = ({ children }: { children: ReactNode }) => (
     <GridItem> {children}</GridItem>
     <GridItem>
       <Flex flexFlow="column">
+        {
+          // todo:
+        }
         <Box bg="pink">About me</Box>
         <Box bg="pink">Search</Box>
         <Box bg="pink">Tags</Box>

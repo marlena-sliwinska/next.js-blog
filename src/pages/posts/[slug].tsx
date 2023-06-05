@@ -30,9 +30,7 @@ export const getStaticProps: GetStaticProps<{ post: IArticle }> = () => {
 export async function getStaticPaths() {
   return {
     paths: [
-      // String variant:
       `/posts/${articleList[0].slug}`,
-      // Object variant:
       { params: { slug: articleList[0].slug } },
     ],
     fallback: true,
