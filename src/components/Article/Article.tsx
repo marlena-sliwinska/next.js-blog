@@ -9,7 +9,8 @@ import {
 
 import { BlogTags } from 'components/BlogTags';
 import { BlogAuthor } from 'components/BlogAuthor';
-import { IArticle } from 'utils/createFakePost';
+
+import { IArticle } from './Article.model';
 
 const Article = (props: IArticle) => {
   const { _id, slug, abbreviation, author, date, avatar, image, title, tags } =
@@ -63,7 +64,7 @@ const Article = (props: IArticle) => {
         justifyContent="center"
         marginTop={{ base: '3', sm: '0' }}
       >
-        <BlogTags tags={tags} />
+        {tags && <BlogTags tags={tags} />}
         <Heading marginTop="1">
           <Link
             textDecoration="none"

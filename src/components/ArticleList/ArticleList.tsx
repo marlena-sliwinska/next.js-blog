@@ -3,7 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { Heading, Container } from '@chakra-ui/react';
 
 import { Article } from 'components/Article';
-import { IArticle } from 'utils/createFakePost';
+import { IArticle } from 'components/Article/Article.model';
 
 const ArticleList = ({ posts }: { posts: IArticle[] }) => (
   <Container maxW={'7xl'} p="12">
