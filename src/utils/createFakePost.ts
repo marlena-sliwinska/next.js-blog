@@ -11,5 +11,3 @@ export const createFakePost = () => ({
   title: faker.lorem.sentence(),
   tags: faker.helpers.uniqueArray(faker.random.word, 5),
 });
-
-export type IArticle = ReturnType<typeof createFakePost>;
