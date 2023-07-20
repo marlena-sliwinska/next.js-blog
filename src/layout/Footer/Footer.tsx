@@ -29,12 +29,22 @@ const Footer = () => (
         <Logo />
         <Stack direction={'row'} spacing={6}>
           {
+<<<<<<< HEAD
             // todo move urls to utils
           }
           <Link href="home">Home</Link>
           <Link href="about">About</Link>
           <Link href="posts">Blog</Link>
           <Link href="contact">Contact</Link>
+=======
+            // todo: urls to utils
+          }
+          <Link href={'#'}>Home</Link>
+          <Link href={'#'}>About</Link>
+          <Link href={'#'}>Blog</Link>
+
+          <Link href="/contact">Contact</Link>
+>>>>>>> f8ab97bc0bfc33c76f46013c016e2a1dcd8a3ef2
         </Stack>
       </Container>
 

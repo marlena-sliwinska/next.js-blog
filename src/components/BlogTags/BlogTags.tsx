@@ -5,10 +5,10 @@ interface IBlogTags {
   marginTop?: SpaceProps['marginTop'];
 }
 
-const BlogTags: React.FC<IBlogTags> = (props) => {
+const BlogTags: React.FC<IBlogTags> = ({ tags, marginTop }) => {
   return (
-    <HStack spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
+    <HStack spacing={2} marginTop={marginTop}>
+      {tags.map((tag) => {
         return (
           <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
             {tag}

@@ -1,11 +1,15 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import { IArticle, createFakePost } from 'utils/createFakePost';
+import { IArticle } from 'components/Article/Article.model';
 
 import { ArticleList } from 'components/ArticleList';
 import { BlogLayout } from 'layout/BlogLayout';
+import { getAllPosts } from 'utils/post-util';
 
 const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  posts.forEach(({ tags, slug }) => {
+    if (tags === undefined) console.log('Here.........', slug);
+  });
   return (
     <BlogLayout>
       <ArticleList posts={posts} />
@@ -15,13 +19,8 @@ const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export default Posts;
 
-export const articleList = [
-  createFakePost(),
-  createFakePost(),
-  createFakePost(),
-  createFakePost(),
-];
 export const getStaticProps: GetStaticProps<{ posts: IArticle[] }> = () => {
   // todo: do some network letancy
+  const articleList = getAllPosts();
   return { props: { posts: articleList } };
 };
