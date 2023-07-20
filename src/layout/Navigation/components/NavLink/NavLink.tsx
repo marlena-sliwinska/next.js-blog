@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
-import { Link, useColorModeValue } from '@chakra-ui/react';
+import { Link as ChakraUiLink, useColorModeValue } from '@chakra-ui/react';
+import Link from 'next/link';
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
+const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
+  <ChakraUiLink
     px={2}
     py={1}
     rounded={'md'}
@@ -10,10 +11,11 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}
+    href={href}
+    as={Link}
   >
     {children}
-  </Link>
+  </ChakraUiLink>
 );
 
 export default NavLink;

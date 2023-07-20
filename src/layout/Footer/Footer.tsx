@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
-import { Logo } from './components/Logo';
+import { Logo } from '../../components/Logo';
 import { SocialButton } from './components/SocialButton';
 
 const Footer = () => (
@@ -28,10 +28,13 @@ const Footer = () => (
       >
         <Logo />
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
-          <Link href={'#'}>Contact</Link>
+          {
+            // todo move urls to utils
+          }
+          <Link href="home">Home</Link>
+          <Link href="about">About</Link>
+          <Link href="posts">Blog</Link>
+          <Link href="contact">Contact</Link>
         </Stack>
       </Container>
 
