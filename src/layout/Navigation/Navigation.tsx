@@ -3,26 +3,19 @@ import {
   Flex,
   HStack,
   IconButton,
-  Button,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 
-import { pages } from 'utils/pages';
 import { Logo } from 'components/Logo';
-
-import { NavLink } from './components/NavLink';
+import { Links } from 'components/Links';
 
 export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // todo: consider to move somwhere
-  const links = Object.entries(pages).map(([key, { name, url }]) => (
-    <NavLink key={key} href={url}>
-      {name}
-    </NavLink>
-  ));
+
   return (
     <nav>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -39,26 +32,15 @@ export default function withAction() {
               <Logo />
             </Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {links}
+              <Links />
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
-            <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}
-              leftIcon={<AddIcon />}
-            >
-              Action
-            </Button>
-          </Flex>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {links}
+              <Links />
             </Stack>
           </Box>
         ) : null}
