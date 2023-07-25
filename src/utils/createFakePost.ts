@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 
+// todo: remove
 export const createFakePost = () => ({
   _id: faker.datatype.uuid(),
   author: faker.name.fullName(),

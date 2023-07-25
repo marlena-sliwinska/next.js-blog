@@ -9,7 +9,9 @@ import {
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
-import { Logo } from './components/Logo';
+import { Logo } from 'components/Logo';
+import { Links } from 'components/Links';
+
 import { SocialButton } from './components/SocialButton';
 
 const Footer = () => (
@@ -27,15 +29,9 @@ const Footer = () => (
         align={'center'}
       >
         <Logo />
-        <Stack direction={'row'} spacing={6}>
-          {
-            // todo: urls to utils
-          }
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
 
-          <Link href="/contact">Contact</Link>
+        <Stack direction={'row'} spacing={6}>
+          <Links />
         </Stack>
       </Container>
 
@@ -53,7 +49,7 @@ const Footer = () => (
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2023 All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />

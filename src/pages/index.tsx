@@ -15,6 +15,8 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 
+// todo: name to change
+
 const Index = () => (
   <Container height="100vh">
     <Hero />
