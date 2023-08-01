@@ -8,9 +8,14 @@ import { IArticle } from 'components/Article/Article.model';
 const ArticleList = ({ posts }: { posts: IArticle[] }) => (
   <Container maxW={'7xl'} p="12">
     <Heading as="h1">Stories by Marlena</Heading>
-    {posts.map((post) => (
-      <Article {...post} key={post._id} />
-    ))}
+
+    {
+      // todo: add _id's to posts
+      // and blog tags
+      posts.map((post) => (
+        <Article {...post} key={post._id} />
+      ))
+    }
   </Container>
 );
 
