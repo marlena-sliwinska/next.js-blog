@@ -1,5 +1,5 @@
 export const pages = {
-  homepage: { name: 'Strona główna', url: '/' },
+  homepage: { name: 'Homepage', url: '/' },
   blog: { name: 'Blog', url: '/posts' },
-  contact: { name: 'Kontakt', url: '/contact' },
+  contact: { name: 'Contact', url: '/contact' },
 };

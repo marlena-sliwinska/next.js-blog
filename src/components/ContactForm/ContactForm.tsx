@@ -27,7 +27,6 @@ const ContactForm = () => {
   const name = useRef<HTMLInputElement>(null);
   const email = useRef<HTMLInputElement>(null);
   const message = useRef<HTMLTextAreaElement>(null);
-  console.log('kontatk');
   const onSubmit = async (event) => {
     event.preventDefault();
     const newMessage = {
@@ -44,7 +43,6 @@ const ContactForm = () => {
       },
       body: JSON.stringify(newMessage),
     });
-    console.log(response);
   };
 
   return (

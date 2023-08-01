@@ -1,11 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
-const url =
-  'mongodb+srv://dev:DiV1LLo1tuyAoPtz@cluster-blog.8zylvbn.mongodb.net/blog?retryWrites=true&w=majority';
-const client = new MongoClient(url);
-const dbName = 'myProject';
+const { MONGO_DB_PASSWORD } = process.env;
+const url = `mongodb+srv://dev:${MONGO_DB_PASSWORD}@cluster-blog.8zylvbn.mongodb.net/blog?retryWrites=true&w=majority`;
+
+type NewMessage = {
+  email: string;
+  name: string;
+  message: string;
+  id?: ObjectId;
+};
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -17,7 +22,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // if data are valid
     // store in database
     // todo: make similar form for comments
-    const newMessage = { email, name, message };
+    const newMessage: NewMessage = { email, name, message };
     const client = new MongoClient(url);
     try {
       await client.connect();

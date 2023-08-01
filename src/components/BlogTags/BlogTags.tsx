@@ -1,4 +1,4 @@
-import { HStack, Tag, SpaceProps } from '@chakra-ui/react';
+import { HStack, Tag, SpaceProps, Box } from '@chakra-ui/react';
 
 interface IBlogTags {
   tags: Array<string>;
@@ -7,12 +7,15 @@ interface IBlogTags {
 
 const BlogTags: React.FC<IBlogTags> = ({ tags, marginTop }) => {
   return (
-    <HStack spacing={2} marginTop={marginTop}>
+    // todo:
+    <HStack spacing={0} marginTop={marginTop} sx={{ flexWrap: 'wrap' }}>
       {tags.map((tag) => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-            {tag}
-          </Tag>
+          <Box pb={1} pr={1}>
+            <Tag size="sm" variant="solid" colorScheme="orange" key={tag}>
+              {tag}
+            </Tag>
+          </Box>
         );
       })}
     </HStack>

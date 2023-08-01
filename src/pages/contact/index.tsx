@@ -13,7 +13,7 @@ import {
   WrapItem,
 } from '@chakra-ui/react';
 import { MdPhone, MdEmail, MdLocationOn, MdFacebook } from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+import { BsGithub, BsDiscord } from 'react-icons/bs';
 import { ContactForm } from 'components/ContactForm';
 
 {
@@ -22,8 +22,6 @@ import { ContactForm } from 'components/ContactForm';
 }
 
 const Contact = () => {
-  console.log('kontatk');
-
   return (
     <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>

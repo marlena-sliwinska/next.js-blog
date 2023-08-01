@@ -65,7 +65,7 @@ const Article = (props: IArticle) => {
         marginTop={{ base: '3', sm: '0' }}
       >
         {tags && <BlogTags tags={tags} />}
-        <Heading marginTop="1">
+        <Heading marginTop="1" size={{ md: 'md', lg: 'lg' }}>
           <Link
             textDecoration="none"
             _hover={{ textDecoration: 'none' }}
@@ -78,7 +78,7 @@ const Article = (props: IArticle) => {
           as="p"
           marginTop="2"
           color={useColorModeValue('gray.700', 'gray.200')}
-          fontSize="lg"
+          fontSize={{ lg: 'md', md: 'sm' }}
         >
           {abbreviation}
         </Text>
