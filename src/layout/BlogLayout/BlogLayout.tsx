@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Flex, Box, Grid, GridItem } from '@chakra-ui/react';
+import { Flex, Box, Grid, GridItem, Text } from '@chakra-ui/react';
 
 const BlogLayout = ({ children }: { children: ReactNode }) => (
   <Grid gap={4} gridTemplateColumns={{ md: 'auto 250px', base: 'auto' }}>
@@ -9,7 +9,9 @@ const BlogLayout = ({ children }: { children: ReactNode }) => (
         {
           // todo:
         }
-        <Box bg="pink">About me</Box>
+        <Box bg="pink">
+          <Text>About me</Text>
+        </Box>
         <Box bg="pink">Search</Box>
         <Box bg="pink">Tags</Box>
       </Flex>

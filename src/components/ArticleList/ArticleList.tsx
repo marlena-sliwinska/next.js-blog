@@ -6,7 +6,7 @@ import { Article } from 'components/Article';
 import { IArticle } from 'components/Article/Article.model';
 
 const ArticleList = ({ posts }: { posts: IArticle[] }) => (
-  <Container maxW={'7xl'} p="12">
+  <Container maxW={'7xl'}>
     <Heading as="h1">Stories by Marlena</Heading>
 
     {
