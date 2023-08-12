@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <Flex minH="100vh" flexFlow="column">
       <Navigation />
-      <chakra.main flexGrow={1} p={4}>
+      <chakra.main flexGrow={1} p={2}>
         {children}
       </chakra.main>
       <Footer />

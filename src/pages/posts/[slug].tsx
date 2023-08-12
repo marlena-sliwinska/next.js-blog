@@ -1,12 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import ReactMarkdown from 'react-markdown';
-import { Text } from '@chakra-ui/react';
 
-import { IArticle } from 'components/Article/Article.model';
-import { createFakePost } from 'utils/createFakePost';
 import { BlogLayout } from 'layout/BlogLayout';
 
-import { articleList } from '.';
 import { getPostData, getPostsFiles } from 'utils/post-util';
 import { FullArticle } from 'components/FullArticle';
 

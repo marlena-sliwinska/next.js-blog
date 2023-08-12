@@ -1,5 +1,3 @@
-import React from 'react';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { Heading, Container } from '@chakra-ui/react';
 
 import { Article } from 'components/Article';

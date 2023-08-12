@@ -3,7 +3,9 @@ import { Flex, Box, Grid, GridItem, Text } from '@chakra-ui/react';
 
 const BlogLayout = ({ children }: { children: ReactNode }) => (
   <Grid gap={4} gridTemplateColumns={{ md: 'auto 250px', base: 'auto' }}>
-    <GridItem> {children}</GridItem>
+    <GridItem>
+      <Box px={4}> {children}</Box>
+    </GridItem>
     <GridItem>
       <Flex flexFlow="column">
         {
