@@ -15,12 +15,6 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export default Post;
 
-/* export const getStaticProps: GetStaticProps<{ post: IArticle }> = () => {
-  const post = createFakePost();
-
-  return { props: { post } };
-}; */
-
 export const getStaticProps: GetStaticProps = (context) => {
   const {
     params: { slug },
