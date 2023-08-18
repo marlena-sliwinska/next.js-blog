@@ -39,8 +39,7 @@ const Article = (props: IArticle) => {
             <Image
               borderRadius="lg"
               src={image}
-              // todo: alt
-              alt="some good alt text"
+              alt={`${title}-image`}
               objectFit="contain"
             />
           </Link>

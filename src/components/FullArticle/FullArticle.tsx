@@ -10,7 +10,6 @@ import { Image } from './components/Image';
 import { Blockquote } from './components/Blockquote';
 
 const FullArticle = ({ post }) => {
-  // todo: move to some utils
   const customComponents = {
     h2(props) {
       return <Title {...props} />;

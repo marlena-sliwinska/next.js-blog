@@ -1,6 +1,6 @@
 ---
 
-\_id: "2c224600-a1d9-446f-8dd0-cdec06bf9d86"
+_id: "2c224600-a1d9-446f-8dd0-cdec06bf9d86"
 author: "Otis Lang"
 date: "Mon Jun 27 2022 16:10:00 GMT+0200 (czas środkowoeuropejski letni)"
 avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/513.jpg"
