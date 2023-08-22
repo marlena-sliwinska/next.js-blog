@@ -83,7 +83,7 @@ const ContactForm = () => {
         <FormControl id="name" float="right">
           <Button
             variant="solid"
-            bg="#0D74FF"
+            bg="blue.500"
             color="white"
             _hover={{}}
             type="submit"

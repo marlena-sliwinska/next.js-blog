@@ -33,18 +33,18 @@ export const Hero = () => (
             _after={{
               content: "''",
               width: 'full',
-              height: '30%',
+              height: '25%',
               position: 'absolute',
               bottom: 1,
               left: 0,
-              bg: 'red.400',
+              bg: 'blue.100',
               zIndex: -1,
             }}
           >
             Welcome
           </Text>
           <br />
-          <Text as="span" color="red.400">
+          <Text as="span" color="blue.800">
             to my blog!
           </Text>
         </Heading>
@@ -62,7 +62,7 @@ export const Hero = () => (
           top="-20%"
           left={0}
           zIndex={-1}
-          color={useColorModeValue('red.50', 'red.400')}
+          color={useColorModeValue('blue.50', 'blue.400')}
         />
         <Box
           position="relative"

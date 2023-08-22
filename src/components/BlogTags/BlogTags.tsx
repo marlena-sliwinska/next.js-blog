@@ -10,7 +10,7 @@ const BlogTags: React.FC<IBlogTags> = ({ tags, marginTop }) => (
     {tags.map((tag) => {
       return (
         <Box pb={1} pr={1} key={tag}>
-          <Tag size="sm" variant="solid" colorScheme="orange" key={tag}>
+          <Tag size="sm" variant="solid" colorScheme="gray" key={tag}>
             {tag}
           </Tag>
         </Box>
