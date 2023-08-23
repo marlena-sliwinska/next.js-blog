@@ -2,17 +2,16 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import { BsGithub } from 'react-icons/bs';
 
 import { Logo } from 'components/Logo';
 import { Links } from 'components/Links';
-
-import { SocialButton } from './components/SocialButton';
+import { SocialButton } from 'components/SocialButton';
 
 const Footer = () => (
   <chakra.footer>
@@ -52,7 +51,7 @@ const Footer = () => (
           <Text>© 2023 All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
-              <FaTwitter />
+              <BsGithub />
             </SocialButton>
             <SocialButton label={'YouTube'} href={'#'}>
               <FaYoutube />

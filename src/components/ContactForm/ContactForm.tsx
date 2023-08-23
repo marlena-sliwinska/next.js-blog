@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import {
   Button,
   VStack,
@@ -7,6 +7,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  FormErrorMessage,
   Textarea,
 } from '@chakra-ui/react';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -18,15 +19,25 @@ const Fields = {
   message: 'message',
 };
 
-const ContactForm = () => {
-  {
-    // todo: make some validation
-    //  split this code, move to components folder
-  }
+import { string } from 'yup';
 
+const ContactForm = () => {
   const name = useRef<HTMLInputElement>(null);
   const email = useRef<HTMLInputElement>(null);
   const message = useRef<HTMLTextAreaElement>(null);
+
+  const [nameError, setNameError] = useState<null | boolean>(null);
+  const [emailError, setEmailError] = useState<null | boolean>(null);
+  const [messageError, setMessageError] = useState<null | boolean>(null);
+
+  const resetForm = useCallback(() => {
+    name.current.value = null;
+    email.current.value = null;
+    message.current.value = null;
+    setNameError(null);
+    setEmailError(null);
+    setMessageError(null);
+  }, []);
   const onSubmit = async (event) => {
     event.preventDefault();
     const newMessage = {
@@ -34,7 +45,19 @@ const ContactForm = () => {
       email: email.current.value,
       message: message.current.value,
     };
-    // todo: validation
+
+    const nameError = await string().required().isValid(newMessage.name);
+    const emailError = await string().email().required().isValid(newMessage.email);
+    const messageError = await string().required().isValid(newMessage.message);
+
+    setNameError(!nameError);
+    setEmailError(!emailError);
+    setMessageError(!messageError);
+
+    if (!nameError || !emailError || !messageError) {
+      console.log(nameError, emailError, messageError);
+      return;
+    }
 
     const response = await fetch('/api/contact', {
       method: 'POST',
@@ -43,12 +66,17 @@ const ContactForm = () => {
       },
       body: JSON.stringify(newMessage),
     });
+    if (response.status === 201) {
+      resetForm();
+    } else {
+      // handle error
+    }
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} noValidate>
       <VStack spacing={5}>
-        <FormControl id="name">
+        <FormControl id="name" isRequired isInvalid={!!nameError}>
           <FormLabel>Your Name</FormLabel>
           <InputGroup borderColor="#E0E1E7">
             <InputLeftElement
@@ -58,7 +86,7 @@ const ContactForm = () => {
             <Input ref={name} type="text" size="md" name={Fields.name} />
           </InputGroup>
         </FormControl>
-        <FormControl id="name">
+        <FormControl id="email" isRequired isInvalid={!!emailError}>
           <FormLabel>Mail</FormLabel>
           <InputGroup borderColor="#E0E1E7">
             <InputLeftElement
@@ -68,7 +96,7 @@ const ContactForm = () => {
             <Input ref={email} type="text" size="md" name={Fields.email} />
           </InputGroup>
         </FormControl>
-        <FormControl id="name">
+        <FormControl id="message" isRequired isInvalid={!!messageError}>
           <FormLabel>Message</FormLabel>
           <Textarea
             borderColor="gray.300"
@@ -83,7 +111,7 @@ const ContactForm = () => {
         <FormControl id="name" float="right">
           <Button
             variant="solid"
-            bg="#0D74FF"
+            bg="blue.500"
             color="white"
             _hover={{}}
             type="submit"

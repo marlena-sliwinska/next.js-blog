@@ -15,7 +15,6 @@ import { Links } from 'components/Links';
 export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // todo: consider to move somwhere
-
   return (
     <nav>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>

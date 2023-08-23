@@ -1,32 +1,29 @@
-import { useRef } from 'react';
 import {
   Container,
   Flex,
   Box,
   Heading,
   Text,
-  IconButton,
   Button,
   VStack,
-  HStack,
   Wrap,
   WrapItem,
+  HStack,
 } from '@chakra-ui/react';
-import { MdPhone, MdEmail, MdLocationOn, MdFacebook } from 'react-icons/md';
-import { BsGithub, BsDiscord } from 'react-icons/bs';
-import { ContactForm } from 'components/ContactForm';
+import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import { BsGithub } from 'react-icons/bs';
 
-{
-  // todo: make some validation
-  //  split this code, move to components folder
-}
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+
+import { SocialButton } from 'components/SocialButton';
+import { ContactForm } from 'components/ContactForm';
 
 const Contact = () => {
   return (
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container maxW="7xl" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          bg="#02054B"
+          bg="blue.800"
           color="white"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
@@ -47,9 +44,8 @@ const Contact = () => {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                        _hover={{}}
+                        leftIcon={<MdPhone color="blue.400" size="20px" />}
                       >
                         +91-988888888
                       </Button>
@@ -58,9 +54,8 @@ const Contact = () => {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                        _hover={{}}
+                        leftIcon={<MdEmail color="blue.400" size="20px" />}
                       >
                         hello@abc.com
                       </Button>
@@ -69,45 +64,26 @@ const Contact = () => {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                        _hover={{}}
+                        leftIcon={<MdLocationOn color="blue.400" size="20px" />}
                       >
-                        Karnavati, India
+                        Wroclaw, Poland
                       </Button>
                     </VStack>
                   </Box>
-                  <HStack
-                    mt={{ lg: 10, md: 10 }}
-                    spacing={5}
-                    px={5}
-                    alignItems="flex-start"
-                  >
-                    <IconButton
-                      aria-label="facebook"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<MdFacebook size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<BsGithub size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="discord"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<BsDiscord size="28px" />}
-                    />
-                  </HStack>
+                  <Box px={2}>
+                    <HStack justifyContent="space-between">
+                      <SocialButton label={'Twitter'} href={'#'}>
+                        <BsGithub />
+                      </SocialButton>
+                      <SocialButton label={'YouTube'} href={'#'}>
+                        <FaYoutube />
+                      </SocialButton>
+                      <SocialButton label={'Instagram'} href={'#'}>
+                        <FaInstagram />
+                      </SocialButton>
+                    </HStack>
+                  </Box>
                 </Box>
               </WrapItem>
               <WrapItem>

@@ -20,7 +20,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-markdown": "^8.0.7",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
