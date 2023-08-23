@@ -9,7 +9,6 @@ const AboutMe = () => {
       borderColor="gray.200"
       alignSelf="center"
       alignItems={{ base: 'center', md: 'flex-start' }}
-      //    width={{ base: 'calc(100vw - 30px)', sm: 'calc(100vw - 230px)', md: 'auto' }}
     >
       <Text fontWeight="bold">ABOUT ME</Text>
       <Image

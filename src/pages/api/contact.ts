@@ -15,13 +15,9 @@ type NewMessage = {
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { email, name, message } = req.body;
-    // double validation
-    //  if(!email)
-    // todo:
+
+    // second validation
     // if invalid res.status 422
-    // if data are valid
-    // store in database
-    // todo: make similar form for comments
     const newMessage: NewMessage = { email, name, message };
     const client = new MongoClient(url);
     try {
@@ -29,6 +25,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       console.log('Connected successfully to server');
     } catch (err) {
       res.status(500).json({ message: 'Could not connect to database' });
+      return;
     }
 
     try {

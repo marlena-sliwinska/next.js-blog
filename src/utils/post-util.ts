@@ -4,8 +4,6 @@ import path from 'path';
 import matter from 'gray-matter';
 import { IArticle } from 'components/Article/Article.model';
 
-// process.cvd - overall project falder
-// todo: ? src
 const postsDirectory = path.join(process.cwd(), 'src', 'posts');
 
 export const getPostsFiles = () => fs.readdirSync(postsDirectory);

@@ -18,11 +18,6 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa';
 import { SocialButton } from 'components/SocialButton';
 import { ContactForm } from 'components/ContactForm';
 
-{
-  // todo: make some validation
-  //  split this code, move to components folder
-}
-
 const Contact = () => {
   return (
     <Container maxW="7xl" mt={0} centerContent overflow="hidden">
