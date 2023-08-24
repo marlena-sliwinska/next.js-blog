@@ -7,19 +7,17 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  FormErrorMessage,
   Textarea,
 } from '@chakra-ui/react';
 import { MdOutlineEmail } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
+import { string } from 'yup';
 
 const Fields = {
   name: 'name',
   email: 'email',
   message: 'message',
 };
-
-import { string } from 'yup';
 
 const ContactForm = () => {
   const name = useRef<HTMLInputElement>(null);
@@ -79,20 +77,18 @@ const ContactForm = () => {
         <FormControl id="name" isRequired isInvalid={!!nameError}>
           <FormLabel>Your Name</FormLabel>
           <InputGroup borderColor="#E0E1E7">
-            <InputLeftElement
-              pointerEvents="none"
-              children={<BsPerson color="gray.800" />}
-            />
+            <InputLeftElement pointerEvents="none">
+              <BsPerson color="gray.800" />
+            </InputLeftElement>
             <Input ref={name} type="text" size="md" name={Fields.name} />
           </InputGroup>
         </FormControl>
         <FormControl id="email" isRequired isInvalid={!!emailError}>
           <FormLabel>Mail</FormLabel>
           <InputGroup borderColor="#E0E1E7">
-            <InputLeftElement
-              pointerEvents="none"
-              children={<MdOutlineEmail color="gray.800" />}
-            />
+            <InputLeftElement pointerEvents="none">
+              <MdOutlineEmail color="gray.800" />
+            </InputLeftElement>
             <Input ref={email} type="text" size="md" name={Fields.email} />
           </InputGroup>
         </FormControl>

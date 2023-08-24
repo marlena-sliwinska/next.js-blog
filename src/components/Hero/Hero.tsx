@@ -49,9 +49,10 @@ export const Hero = () => (
           </Text>
         </Heading>
         <Text color="gray.500">
-          I am thrilled to have you here. In this space, I'll be sharing my thoughts,
-          experiences, and passions with you. Whether you're a regular reader or a
-          newcomer, I hope you find something inspiring and enjoyable in my posts.
+          I am thrilled to have you here. In this space, I&apos;ll be sharing my
+          thoughts, experiences, and passions with you. Whether you&apos;re a regular
+          reader or a newcomer, I hope you find something inspiring and enjoyable in
+          my posts.
         </Text>
       </Stack>
       <Flex flex={1} justify="center" align="center" position="relative" w="full">

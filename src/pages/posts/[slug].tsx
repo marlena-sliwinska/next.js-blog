@@ -19,8 +19,11 @@ export const getStaticProps: GetStaticProps = (context) => {
   const {
     params: { slug },
   } = context;
+  if (typeof slug !== 'string') {
+    throw new Error('Something went wrong...');
+  }
   const post = getPostData(slug);
-  return { props: { post: post } };
+  return { props: { post } };
 };
 
 export async function getStaticPaths() {
@@ -28,7 +31,7 @@ export async function getStaticPaths() {
   const slugs = postFileNames.map((fileName) => fileName.replace(/\.md$/, ''));
 
   return {
-    paths: slugs.map((slug) => ({ params: { slug: slug } })),
+    paths: slugs.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 }

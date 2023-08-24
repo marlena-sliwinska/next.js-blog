@@ -13,8 +13,7 @@ import { BlogAuthor } from 'components/BlogAuthor';
 import { IArticle } from './Article.model';
 
 const Article = (props: IArticle) => {
-  const { _id, slug, abbreviation, author, date, avatar, image, title, tags } =
-    props;
+  const { slug, abbreviation, author, date, image, title, tags } = props;
   return (
     <Box
       marginTop={{ base: '1', sm: '5' }}

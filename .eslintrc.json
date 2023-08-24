@@ -15,7 +15,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -46,7 +47,7 @@
         "react/prop-types": "off",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/explicit-function-return-type": [
-          "warn",
+          "off",
           {
             "allowExpressions": true,
             "allowConciseArrowFunctionExpressionsStartingWithVoid": true

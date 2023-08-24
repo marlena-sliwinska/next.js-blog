@@ -7,12 +7,12 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 import { Logo } from 'components/Logo';
 import { Links } from 'components/Links';
 
-export default function withAction() {
+export default function Navigation() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // todo: consider to move somwhere
   return (
