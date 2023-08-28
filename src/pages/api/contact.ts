@@ -2,8 +2,13 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { MongoClient, ObjectId } from 'mongodb';
 
-const { MONGO_DB_PASSWORD } = process.env;
-const url = `mongodb+srv://dev:${MONGO_DB_PASSWORD}@cluster-blog.8zylvbn.mongodb.net/blog?retryWrites=true&w=majority`;
+const {
+  MONGO_DB_PASSWORD,
+  MONGO_DB_USER,
+  MONGO_DB_CLUSTER_NAME,
+  MONGO_DB_DATABASE,
+} = process.env;
+const url = `mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@${MONGO_DB_CLUSTER_NAME}.8zylvbn.mongodb.net/${MONGO_DB_DATABASE}?retryWrites=true&w=majority`;
 
 type NewMessage = {
   email: string;

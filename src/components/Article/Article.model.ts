@@ -8,4 +8,5 @@ export type IArticle = {
   abbreviation: string;
   title: string;
   tags: string[];
+  content: string;
 };

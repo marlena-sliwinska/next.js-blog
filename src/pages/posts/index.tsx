@@ -6,16 +6,11 @@ import { ArticleList } from 'components/ArticleList';
 import { BlogLayout } from 'layout/BlogLayout';
 import { getAllPosts } from 'utils/post-util';
 
-const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  posts.forEach(({ tags, slug }) => {
-    if (tags === undefined) console.log('Here.........', slug);
-  });
-  return (
-    <BlogLayout>
-      <ArticleList posts={posts} />
-    </BlogLayout>
-  );
-};
+const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <BlogLayout>
+    <ArticleList posts={posts} />
+  </BlogLayout>
+);
 
 export default Posts;
 
